@@ -1,0 +1,8 @@
+vkCreateInstance(&ii, NULL, &i) = 0
+vkEnumeratePhysicalDevices(i, &n, NULL) = 0
+vkEnumeratePhysicalDevices(i, &n, pd) = 0
+device=Mali-G610 MC6 api=1.1.177
+family=0 flags=7 count=2
+vkCreateDevice(pd[0], &di, NULL, &d) = 0
+queue legacy=0xb400007744d60140 queue2=0x0 equal=0 flags=0
+submit queue2-empty queue=0x0 cmd=0x0

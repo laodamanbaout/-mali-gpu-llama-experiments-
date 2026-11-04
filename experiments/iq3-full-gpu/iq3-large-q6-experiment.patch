@@ -1,0 +1,37 @@
+--- a/ggml/src/ggml-vulkan/ggml-vulkan.cpp
++++ b/ggml/src/ggml-vulkan/ggml-vulkan.cpp
+@@ -15592,6 +15592,12 @@
+         ggml_nbytes(op) <= device->max_buffer_size) {
+         return true;
+     }
++    if (getenv("GGML_VK_EXPERIMENTAL_LARGE_Q6_MAT") && device->vendor_id == 0x13b5 &&
++        op->op == GGML_OP_NONE && op->type == GGML_TYPE_Q6_K &&
++        op->ne[0] == 3584 && op->ne[1] == 152064 && op->ne[2] == 1 && op->ne[3] == 1 &&
++        ggml_is_contiguous(op) && ggml_nbytes(op) <= device->max_buffer_size) {
++        return true;
++    }
+ 
+     const bool uses_bda = (op->op == GGML_OP_IM2COL || op->op == GGML_OP_IM2COL_3D) &&
+                           device->shader_int64 && device->buffer_device_address;
+@@ -15620,11 +15626,20 @@
+         op->ne[2] == 1 && op->ne[3] == 1 && op->src[0]->nb[1] > 0 &&
+         op->src[0]->nb[1] <= device->properties.limits.maxStorageBufferRange / 2 &&
+         ggml_nbytes(op->src[0]) <= device->max_buffer_size;
++    const bool experimental_large_q6_mat =
++        getenv("GGML_VK_EXPERIMENTAL_LARGE_Q6_MAT") != nullptr && device->vendor_id == 0x13b5 &&
++        op->op == GGML_OP_MUL_MAT && op->src[0] && op->src[1] &&
++        op->src[0]->type == GGML_TYPE_Q6_K && op->src[1]->type == GGML_TYPE_F32 &&
++        op->src[0]->ne[0] == 3584 && op->src[0]->ne[1] == 152064 &&
++        ggml_is_contiguous(op->src[0]) && op->src[0]->ne[2] == 1 && op->src[0]->ne[3] == 1 &&
++        op->ne[2] == 1 && op->ne[3] == 1 && op->src[0]->nb[1] > 0 &&
++        op->src[0]->nb[1] <= device->properties.limits.maxStorageBufferRange / 2 &&
++        ggml_nbytes(op->src[0]) <= device->max_buffer_size;
+ 
+     // reject unsupported oversized tensors; only the explicitly gated matrix may be split
+     for (int i = 0; i < GGML_MAX_SRC; i++) {
+         if (op->src[i] && !tensor_size_supported(ggml_nbytes(op->src[i]))) {
+-            if (i != 0 || !experimental_large_q5_mat) {
++            if (i != 0 || !(experimental_large_q5_mat || experimental_large_q6_mat)) {
+                 return false;
+             }
+         }

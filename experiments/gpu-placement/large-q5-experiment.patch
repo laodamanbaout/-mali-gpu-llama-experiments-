@@ -1,0 +1,45 @@
+--- a/ggml/src/ggml-vulkan/ggml-vulkan.cpp
++++ b/ggml/src/ggml-vulkan/ggml-vulkan.cpp
+@@ -15538,6 +15538,15 @@
+     ggml_backend_vk_device_context * ctx = (ggml_backend_vk_device_context *)dev->context;
+     const vk_device& device = ggml_vk_get_device(ctx->device);
+ 
++    // This leaf is storage only; the consuming MUL_MAT is separately checked
++    // and uses the existing large-matrix dispatch splitting below.
++    if (getenv("GGML_VK_EXPERIMENTAL_LARGE_Q5_MAT") && op->op == GGML_OP_NONE &&
++        op->type == GGML_TYPE_Q5_K && op->ne[0] == 3584 && op->ne[1] == 152064 &&
++        op->ne[2] == 1 && op->ne[3] == 1 && ggml_is_contiguous(op) &&
++        ggml_nbytes(op) <= device->max_buffer_size) {
++        return true;
++    }
++
+     const bool uses_bda = (op->op == GGML_OP_IM2COL || op->op == GGML_OP_IM2COL_3D) &&
+                           device->shader_int64 && device->buffer_device_address;
+ 
+@@ -15554,10 +15563,24 @@
+         }
+         return true;
+     };
+-    // reject any tensors larger than the max buffer size
++    // Experiment: permit one large, contiguous Q5_K matrix through to the
++    // existing M-split path. Other tensors and shapes retain the normal limit.
++    const bool experimental_large_q5_mat =
++        getenv("GGML_VK_EXPERIMENTAL_LARGE_Q5_MAT") != nullptr &&
++        op->op == GGML_OP_MUL_MAT && op->src[0] && op->src[1] &&
++        op->src[0]->type == GGML_TYPE_Q5_K && op->src[1]->type == GGML_TYPE_F32 &&
++        op->src[0]->ne[0] == 3584 && op->src[0]->ne[1] == 152064 &&
++        ggml_is_contiguous(op->src[0]) && op->src[0]->ne[2] == 1 && op->src[0]->ne[3] == 1 &&
++        op->ne[2] == 1 && op->ne[3] == 1 && op->src[0]->nb[1] > 0 &&
++        op->src[0]->nb[1] <= device->properties.limits.maxStorageBufferRange / 2 &&
++        ggml_nbytes(op->src[0]) <= device->max_buffer_size;
++
++    // reject unsupported oversized tensors; only the explicitly gated matrix may be split
+     for (int i = 0; i < GGML_MAX_SRC; i++) {
+         if (op->src[i] && !tensor_size_supported(ggml_nbytes(op->src[i]))) {
+-            return false;
++            if (i != 0 || !experimental_large_q5_mat) {
++                return false;
++            }
+         }
+     }
+     if (!tensor_size_supported(ggml_nbytes(op))) {

@@ -1,0 +1,287 @@
+[
+  {
+    "path": "experiments/Mali实验成果总览.md",
+    "size": 7145,
+    "sha256": "b77c24811ab05c6e9222e8e3605ee84479b4cb8e8d6b9795f54b68995112c8b1"
+  },
+  {
+    "path": "experiments/IQ3按需搬运全GPU实验.md",
+    "size": 6045,
+    "sha256": "18eb88e5c34fabe188fb78d0d30e0c70eb43192a45feadb805254984000e8d37"
+  },
+  {
+    "path": "experiments/全GPU生成加速实验报告.md",
+    "size": 5298,
+    "sha256": "427772fac90de76bc7d7b503ad3179adefc92f0d77e4f575611abd43968343f3"
+  },
+  {
+    "path": "experiments/Mali数值差异与模型回答复测.md",
+    "size": 6916,
+    "sha256": "e314e7c23d94b9f21135eaf6f0b05727b837b63534ecfc4b79f0e275efed7ba6"
+  },
+  {
+    "path": "experiments/天玑8100-全GPU推理实验报告.md",
+    "size": 6432,
+    "sha256": "45dc37096605eb4b307e7b1813f0ca304a44a98cb0438d3445e7705d35bcb1d6"
+  },
+  {
+    "path": "experiments/逐层数值与真实权重对照报告.md",
+    "size": 5554,
+    "sha256": "bd68c46ebc848fa6670c6125df86aa8c6af8847b9bb423bab85540d9a86f31f6"
+  },
+  {
+    "path": "experiments/位置编码融合排查报告.md",
+    "size": 6351,
+    "sha256": "087c1dc4c0ea9f6607b927c0f827cf2007a60ec67595837a400e8d8cb56c273f"
+  },
+  {
+    "path": "experiments/选择性精度实验报告.md",
+    "size": 5728,
+    "sha256": "e9d9e3745144cb176c15221744fe28b2ef83b2069c2b394eca10e6bacdcab112"
+  },
+  {
+    "path": "experiments/512token批次与续写复测报告.md",
+    "size": 3030,
+    "sha256": "32bebfd9a6feadaef78c80e51096946f58df3f3ac18ce07c951e2a4d20c1c74d"
+  },
+  {
+    "path": "experiments/IQ3全GPU与后台清理实验报告.md",
+    "size": 4445,
+    "sha256": "c9ea1193172a86f24a0933154db09c42f376433f5a619928935687621caa84f1"
+  },
+  {
+    "path": "experiments/IQ3输出矩阵分块与精度实验.md",
+    "size": 5159,
+    "sha256": "1e64f467fb28ca17e68f8c40673f37f110e77f409ac2024942591dad4146cabc"
+  },
+  {
+    "path": "experiments/实验手册-草稿.md",
+    "size": 8692,
+    "sha256": "88e8b2e35a699da8ba01c674bb74b3ac8e7d2dfcbf613f20fe168723082f845d"
+  },
+  {
+    "path": "experiments/queue-probe.c",
+    "size": 4184,
+    "sha256": "1cc27d444c396244786510235b9225edd6106d4096882b9b0e2d8c76902287a9"
+  },
+  {
+    "path": "experiments/queue-probe.txt",
+    "size": 318,
+    "sha256": "e8b6244eb33a6e92e5dc95b0e5584fbdacda70352bb2cdb0ce9e54e070b57315"
+  },
+  {
+    "path": "experiments/queue-probe-legacy.txt",
+    "size": 704,
+    "sha256": "8aa4780b7778febe29c120a79bf26b0d2ac07f5f1b65b0bf49bf172ef1354cbe"
+  },
+  {
+    "path": "experiments/mali-llama-stream.sh",
+    "size": 2897,
+    "sha256": "89f459d83c9a8f4c57a1e77f6cd5eb096e60ed487535edf19b19f7411d9c1fdc"
+  },
+  {
+    "path": "experiments/prompt-suite/chinese.txt",
+    "size": 141,
+    "sha256": "311d8e9c897006298faf796fc21343887348cb227252cbbd9852838c9cd73332"
+  },
+  {
+    "path": "experiments/prompt-suite/dependency-versions.txt",
+    "size": 142,
+    "sha256": "f0c09feccf271aeff4121aaff497905eb97dfc082a2ef501fe5bf5a0dcea93cb"
+  },
+  {
+    "path": "experiments/prompt-suite/upstream-to-experiment.patch",
+    "size": 5016,
+    "sha256": "3c8605b33e4c45b75ad1ac346dc1d9d9f17972e391da83b9460c190fd3e12762"
+  },
+  {
+    "path": "experiments/gpu-placement/large-q5-experiment.patch",
+    "size": 2253,
+    "sha256": "e06aa94f89a4a025ed12946b37257ac1dd60fe29780a5a637e148bd9c8827812"
+  },
+  {
+    "path": "experiments/layer-trace/selective-fp32-experiment.patch",
+    "size": 4006,
+    "sha256": "2802cc18cc29f7db40b9d645b425a2f8c4c5d43113876569cde558efe8650701"
+  },
+  {
+    "path": "experiments/fusion-investigation/fusion-investigation.patch",
+    "size": 2239,
+    "sha256": "ad699d8d67f8a354f2831a499e5c0c36c3fa221c26981d0dbfcc0513779858b6"
+  },
+  {
+    "path": "experiments/iq3-full-gpu/iq3-large-q6-experiment.patch",
+    "size": 2052,
+    "sha256": "6649e18ee274048e79bd237a461e87aebeeccb230c85cacad52c4ac512c7f6d5"
+  },
+  {
+    "path": "experiments/iq3-real-q6/q6-selective-fp32.patch",
+    "size": 804,
+    "sha256": "28e70b5537fb0b5d1ad7eda994143e7a6c0f535965c22562bf43f1f3713945be"
+  },
+  {
+    "path": "experiments/large-matvec/large-matvec-experiment.patch",
+    "size": 2725,
+    "sha256": "56af5f2125ac913a2ae28fc4a90788dfe73399c8e39b21c3c1b9621ac65a9de9"
+  },
+  {
+    "path": "experiments/iq3-full-gpu/iq3-q6-test-experiment.patch",
+    "size": 2690,
+    "sha256": "5e349797c5fe67d258c702f73c81723757180ed99e46083549f6a9f344052523"
+  },
+  {
+    "path": "experiments/iq3-full-gpu/q6-test-enabled1-n1.log",
+    "size": 808,
+    "sha256": "cc0b17c8bf28407837133da08d4502f9fc1b793521534122d19939a9e8161ac1"
+  },
+  {
+    "path": "experiments/iq3-full-gpu/q6-test-enabled1-n1-repeat.log",
+    "size": 808,
+    "sha256": "70d0c14b1ae06049fe97fd521c377ac70d2ff666f353695e1d25a29050681a5e"
+  },
+  {
+    "path": "experiments/iq3-full-gpu/q6-test-enabled1-n32.log",
+    "size": 809,
+    "sha256": "05881946d80c2b13517152747decd8442d9208c56331d8309e02f5d3479b4862"
+  },
+  {
+    "path": "experiments/iq3-full-gpu/q6-test-enabled1-n32-repeat.log",
+    "size": 809,
+    "sha256": "4de1c2b1bd97193a93362869fa4449ad174bcf19e68637d00f5ecf43598620cc"
+  },
+  {
+    "path": "experiments/large-matvec/full-model/cli32-baseline.log",
+    "size": 240669,
+    "sha256": "0ca372faac86d3b1c83e266350e5811c4c5c14de48aef21c7c14d42a6f1b120b"
+  },
+  {
+    "path": "experiments/large-matvec/full-model/cli32-optimized.log",
+    "size": 242376,
+    "sha256": "6107fdaa7bd95b39b1b208b5139333bc4ae472d951ebc767f03e59ce352c9d82"
+  },
+  {
+    "path": "experiments/large-matvec/full-model/cli32-text-comparison.txt",
+    "size": 361,
+    "sha256": "780ce9e31591cd5017e220d0fb69a41841e9dd7489c0c202f7295fae32e8f71b"
+  },
+  {
+    "path": "experiments/large-matvec/full-model/summary.txt",
+    "size": 1937,
+    "sha256": "3ecff81e7e556a06ec659922ae42cdba8523788add90f27c9ccbaaf082c8a73b"
+  },
+  {
+    "path": "experiments/large-matvec/full-model/capital-enabled1-trial1.bin",
+    "size": 608256,
+    "sha256": "00469fbfe8d8b8d6c6198e14a5ff1717f8fb6dcf0f623f1af795d55a10b62076"
+  },
+  {
+    "path": "experiments/matvec-validation/full-reference-comparison.txt",
+    "size": 741,
+    "sha256": "18a371f778f521eb20a9573f794d7ed5c2ef47b6135efbf098cdfef61b616220"
+  },
+  {
+    "path": "experiments/matvec-validation/attn-batch/comparison.txt",
+    "size": 349,
+    "sha256": "7f18af9d0011f9e4210f26d01ce20cc047e1866d2795db702dc964e0221022c3"
+  },
+  {
+    "path": "experiments/matvec-validation/chat-summary.txt",
+    "size": 1868,
+    "sha256": "ae6123b6549ef8a83ffe28fc91f18a2fcb5e0b2a310184cda2d96328713ee412"
+  },
+  {
+    "path": "experiments/weight-stream/stream-logit-probe.cpp",
+    "size": 11434,
+    "sha256": "845a29a9843f875531a537ca5cf6157caac6b072ab4da77fb297f728789802f5"
+  },
+  {
+    "path": "experiments/weight-stream/summarize-results.py",
+    "size": 2126,
+    "sha256": "df221f57cc9e3e5398fd6110daa16f8e87e1977c1c188f6c68978c42dc12a9d6"
+  },
+  {
+    "path": "experiments/weight-stream/summary.txt",
+    "size": 1209,
+    "sha256": "f729d39f944ab1dddd493828fb3d884f032cccd457668d0f2d81691759aa450e"
+  },
+  {
+    "path": "experiments/weight-stream/launcher-guard.log",
+    "size": 60,
+    "sha256": "6ea27327f9fe3e764576f390eeda79edc2a6c2d9439ee6ab0fcbe7dccfa79190"
+  },
+  {
+    "path": "experiments/weight-stream/launcher-chat-iq1-4.log",
+    "size": 922238,
+    "sha256": "b9dff34d70288067301937a1705aff84b71ed023b2d3101b4b49e899eda5b95f"
+  },
+  {
+    "path": "experiments/weight-stream/launcher-chat-iq1-4-memory.tsv",
+    "size": 471,
+    "sha256": "0b9264eac1038219e41d60649594563b42e51ee0ec5608b2e17f71ecb5f5f71e"
+  },
+  {
+    "path": "experiments/weight-stream/launcher-chat-iq3-32.log",
+    "size": 923695,
+    "sha256": "4f71912d65f87b791a461c6d3804da1eba061f44ad9123ad23e4392f1f9e73ba"
+  },
+  {
+    "path": "experiments/weight-stream/launcher-chat-iq3-32-memory.tsv",
+    "size": 1432,
+    "sha256": "d06fe5ce67e58e6933645829c50c191f26280e618c5b37d857b498e5c98f3c12"
+  },
+  {
+    "path": "experiments/weight-stream/iq3-stream-mmap-16tokens-1.log",
+    "size": 613832,
+    "sha256": "6b00e7b5f8943f7cd4310b192fc37e4ffc6c947bc5562ddde7cacb9f09de9db5"
+  },
+  {
+    "path": "experiments/weight-stream/iq3-stream-mmap-16tokens-1-memory.tsv",
+    "size": 471,
+    "sha256": "d3fab9ca72a3a7163524c33b714211efe1f5abf375b624dc9b9cb0a29af1efab"
+  },
+  {
+    "path": "experiments/weight-stream/probe-iq1-gpu-capital-raw.log",
+    "size": 410582,
+    "sha256": "8439b4d09ee9ca633b79488548e38d1b9c97ccb57636f22255276e4051c218eb"
+  },
+  {
+    "path": "experiments/weight-stream/probe-iq1-gpu-capital-raw.bin",
+    "size": 608256,
+    "sha256": "00469fbfe8d8b8d6c6198e14a5ff1717f8fb6dcf0f623f1af795d55a10b62076"
+  },
+  {
+    "path": "experiments/weight-stream/probe-iq1-gpu-capital-raw-memory.tsv",
+    "size": 163,
+    "sha256": "f3ae5cdb17963377d17aac7e159de5e3c9d2ee80d2e298e1109d12805c8fe1fb"
+  },
+  {
+    "path": "experiments/weight-stream/probe-iq3-cpu-chinese-system-32.log",
+    "size": 200490,
+    "sha256": "a023f7db95adfddf17eee0687f98553b7fa50699492c014420159517942884b9"
+  },
+  {
+    "path": "experiments/weight-stream/probe-iq3-cpu-chinese-system-32.bin",
+    "size": 608256,
+    "sha256": "3baf714301fba946aee7b3317ab16126358a59beafa040d923d3f3e4a2f32055"
+  },
+  {
+    "path": "experiments/weight-stream/probe-iq3-cpu-chinese-system-32-memory.tsv",
+    "size": 317,
+    "sha256": "795ca1ff125df034d85fc4b197994080c585a64694ac7a746526f5f942ebf9cb"
+  },
+  {
+    "path": "experiments/weight-stream/probe-iq3-gpu-chinese-system-32.log",
+    "size": 435049,
+    "sha256": "1372d05d725e419039e9f8992574aad5db0c44ab8590dfe80ec76a96db5140f6"
+  },
+  {
+    "path": "experiments/weight-stream/probe-iq3-gpu-chinese-system-32.bin",
+    "size": 608256,
+    "sha256": "12b89abfeb76cd4813e7dac5e3636b3df03149c364084cfb7665b61a650b9bc6"
+  },
+  {
+    "path": "experiments/weight-stream/probe-iq3-gpu-chinese-system-32-memory.tsv",
+    "size": 997,
+    "sha256": "ecf2117cc7aa26f6842df337be36a534d7eb9e6679e7a70d84d20f619e2fe629"
+  }
+]

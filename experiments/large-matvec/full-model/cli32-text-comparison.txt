@@ -1,0 +1,3 @@
+baseline trace_count 0 text ' Paris. Paris is also the name of a city located in France. The capital of France is located in Paris. The capital of France is located in Paris'
+optimized trace_count 32 text ' Paris. Paris is also the name of a city located in France. This is a coincidence of course. Paris is a city located in France. Paris is'
+text_equal False

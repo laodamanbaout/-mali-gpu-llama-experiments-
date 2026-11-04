@@ -1,0 +1,17 @@
+capital-enabled0-trial1	tokens=8	seconds=11.988792	decode_steps_per_sec=0.583879	trace_count=0	ids=[12095, 13, 12095, 374, 1083, 279, 829, 315]
+capital-enabled0-trial2	tokens=8	seconds=13.167371	decode_steps_per_sec=0.531617	trace_count=0	ids=[12095, 13, 12095, 374, 1083, 279, 829, 315]
+capital-enabled1-trial1	tokens=8	seconds=6.976089	decode_steps_per_sec=1.003428	trace_count=8	ids=[12095, 13, 12095, 374, 1083, 279, 829, 315]
+capital-enabled1-trial2	tokens=8	seconds=6.800643	decode_steps_per_sec=1.029314	trace_count=8	ids=[12095, 13, 12095, 374, 1083, 279, 829, 315]
+capital enabled=0 repeat_logits_equal=True repeat_tokens_equal=True
+capital enabled=1 repeat_logits_equal=True repeat_tokens_equal=True
+capital changed_path logits_equal=False total_variation=0.0257202405 tokens_equal=True
+code-enabled0-trial1	tokens=8	seconds=13.097124	decode_steps_per_sec=0.534468	trace_count=0	ids=[707, 912, 2877, 293, 1648, 689, 707, 912]
+code-enabled0-trial2	tokens=8	seconds=12.526492	decode_steps_per_sec=0.558816	trace_count=0	ids=[707, 912, 2877, 293, 1648, 689, 707, 912]
+code-enabled1-trial1	tokens=8	seconds=6.920551	decode_steps_per_sec=1.011480	trace_count=8	ids=[707, 912, 2877, 11, 293, 1648, 470, 707]
+code-enabled1-trial2	tokens=8	seconds=6.949696	decode_steps_per_sec=1.007238	trace_count=8	ids=[707, 912, 2877, 11, 293, 1648, 470, 707]
+code enabled=0 repeat_logits_equal=True repeat_tokens_equal=True
+code enabled=1 repeat_logits_equal=True repeat_tokens_equal=True
+code changed_path logits_equal=False total_variation=0.027211979 tokens_equal=False
+real128-enabled0-trial1	tokens=8	seconds=12.204958	decode_steps_per_sec=0.573537	trace_count=0	ids=[264, 2747, 13, 576, 14833, 702, 11882, 264]
+real128-enabled1-trial1	tokens=8	seconds=6.963506	decode_steps_per_sec=1.005241	trace_count=8	ids=[264, 2747, 13, 576, 14833, 702, 11882, 264]
+real128 changed_path logits_equal=False total_variation=0.0154510762 tokens_equal=True

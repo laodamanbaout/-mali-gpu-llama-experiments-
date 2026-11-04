@@ -1,0 +1,20 @@
+vkCreateInstance(&ii, NULL, &i) = 0
+vkEnumeratePhysicalDevices(i, &n, NULL) = 0
+vkEnumeratePhysicalDevices(i, &n, pd) = 0
+device=Mali-G610 MC6 api=1.1.177
+family=0 flags=7 count=2
+vkCreateDevice(pd[0], &di, NULL, &d) = 0
+queue legacy=0xb4000076499ec140 queue2=0x0 equal=0 flags=0
+submit legacy-empty queue=0xb4000076499ec140 cmd=0x0
+vkCreateFence(d, &fi, NULL, &f) = 0
+vkQueueSubmit = 0
+vkWaitForFences = 0
+vkCreateCommandPool(d, &pi, NULL, &pool) = 0
+vkAllocateCommandBuffers(d, &ai, &cb) = 0
+vkBeginCommandBuffer(cb, &bi) = 0
+vkEndCommandBuffer(cb) = 0
+submit legacy-command queue=0xb4000076499ec140 cmd=0xb4000076499eca00
+vkCreateFence(d, &fi, NULL, &f) = 0
+vkQueueSubmit = 0
+vkWaitForFences = 0
+PASS

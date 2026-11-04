@@ -1,0 +1,89 @@
+diff --git a/ggml/src/ggml-vulkan/ggml-vulkan.cpp b/ggml/src/ggml-vulkan/ggml-vulkan.cpp
+index c094368..07a0e66 100644
+--- a/ggml/src/ggml-vulkan/ggml-vulkan.cpp
++++ b/ggml/src/ggml-vulkan/ggml-vulkan.cpp
+@@ -1043,6 +1043,15 @@ std::unique_ptr<vk_queue> ggml_vk_create_queue(vk_device& device, uint32_t queue
+     }
+ 
+     h->queue = device->device.getQueue2(queue_info2);
++    fprintf(stderr, "QUEUE_DIAG family=%u index=%u internal=%d queue2=%p\n", queue_family_index, queue_index, device->has_internally_synchronized_queues, (void *) static_cast<VkQueue>(h->queue));
++    if (!h->queue && !device->has_internally_synchronized_queues) {
++        h->queue = device->device.getQueue(queue_family_index, queue_index);
++        fprintf(stderr, "QUEUE_DIAG legacy=%p\n", (void *) static_cast<VkQueue>(h->queue));
++    }
++    if (!h->queue) {
++        fprintf(stderr, "QUEUE_DIAG no usable queue\n");
++        abort();
++    }
+     h->device = device;
+     // Avoid concurrent submissions on NVIDIA due to driver bug.
+     if (device->vendor_id == VK_VENDOR_ID_NVIDIA) {
+@@ -1218,6 +1227,9 @@ static vk_fa_tuning_params get_fa_tuning_params_scalar(const vk_device& device,
+         row_split_max_hsk = n_rows <= 8 ? 64 : 128;
+     }
+     result.row_split = (n_rows < 4 || hsk <= row_split_max_hsk) ? 1 : 4;
++    if (device->vendor_id == 0x13b5 && getenv("GGML_VK_EXPERIMENTAL_FA_ROW_SPLIT_1")) {
++        result.row_split = 1;
++    }
+ 
+     if (result.subgroup_size > 32 && (n_rows < 4 || hsk < (result.row_split == 1 ? 128 : 64))) {
+         result.workgroup_size = result.subgroup_size * 2;
+@@ -4540,6 +4552,19 @@ vk_device ggml_vk_get_device(size_t idx) {
+         device->buffer_device_address = vk12_features.bufferDeviceAddress;
+         device->vulkan_memory_model = vk12_features.vulkanMemoryModel;
+ 
++        // Feature bit is core-1.2, but the proc address still needs the KHR extension
++        // enabled on a pre-1.2 device (some drivers report the feature without listing the
++        // extension name) -- otherwise the later call resolves to a null function pointer.
++        if (device->buffer_device_address && device->properties.apiVersion < VK_API_VERSION_1_2) {
++            device_extensions.push_back("VK_KHR_buffer_device_address");
++        }
++
++        // Same pre-1.2 gap as above, for timeline semaphores (used unconditionally, not
++        // behind a capability check).
++        if (vk12_features.timelineSemaphore && device->properties.apiVersion < VK_API_VERSION_1_2) {
++            device_extensions.push_back("VK_KHR_timeline_semaphore");
++        }
++
+         if (device->subgroup_size_control) {
+             device->subgroup_min_size = subgroup_size_control_props.minSubgroupSize;
+             device->subgroup_max_size = subgroup_size_control_props.maxSubgroupSize;
+@@ -4666,7 +4691,10 @@ vk_device ggml_vk_get_device(size_t idx) {
+             throw std::runtime_error("Unsupported device");
+         }
+ 
+-        device_extensions.push_back("VK_KHR_16bit_storage");
++        // Core since 1.1; some drivers stop listing it as an extension past that point.
++        if (device->properties.apiVersion < VK_API_VERSION_1_1) {
++            device_extensions.push_back("VK_KHR_16bit_storage");
++        }
+ 
+ #ifdef GGML_VULKAN_VALIDATE
+         device_extensions.push_back("VK_KHR_shader_non_semantic_info");
+@@ -4790,6 +4818,10 @@ vk_device ggml_vk_get_device(size_t idx) {
+         device_create_info.setPNext(&device_features2);
+         device->device = device->physical_device.createDevice(device_create_info);
+ 
++        // Only ever init()'d against the instance; some ICDs don't resolve device-level
++        // extension functions through the instance-level trampoline alone.
++        VULKAN_HPP_DEFAULT_DISPATCHER.init(device->device);
++
+         if (device->device_fault) {
+             device->pfn_vkGetDeviceFaultInfoEXT = (PFN_vkGetDeviceFaultInfoEXT)
+                 vkGetDeviceProcAddr(device->device, "vkGetDeviceFaultInfoEXT");
+@@ -14411,7 +14443,6 @@ static ggml_status ggml_backend_vk_graph_compute(ggml_backend_t backend, ggml_cg
+             ctx->query_node_idx.resize(ctx->num_queries);
+         }
+ 
+-        ctx->device->device.resetQueryPool(ctx->query_pool, 0, cgraph->n_nodes+1);
+         std::fill(ctx->query_fusion_names.begin(), ctx->query_fusion_names.end(), nullptr);
+         std::fill(ctx->query_fusion_node_count.begin(), ctx->query_fusion_node_count.end(), 0);
+         std::fill(ctx->query_nodes.begin(), ctx->query_nodes.end(), nullptr);
+@@ -14419,6 +14450,7 @@ static ggml_status ggml_backend_vk_graph_compute(ggml_backend_t backend, ggml_cg
+ 
+         GGML_ASSERT(ctx->compute_ctx.expired());
+         compute_ctx = ggml_vk_get_compute_ctx(ctx);
++        compute_ctx->s->buffer->buf.resetQueryPool(ctx->query_pool, 0, cgraph->n_nodes+1);
+         ctx->query_idx = 0;
+         compute_ctx->s->buffer->buf.writeTimestamp(vk::PipelineStageFlagBits::eAllCommands, ctx->query_pool, ctx->query_idx++);
+         ggml_vk_sync_buffers(ctx, compute_ctx);

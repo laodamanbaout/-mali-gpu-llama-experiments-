@@ -1,0 +1,49 @@
+--- a/tests/test-backend-ops.cpp
++++ b/tests/test-backend-ops.cpp
+@@ -5400,6 +5400,36 @@
+         return VARS_TO_STR13(type_a, type_b, m, n, k, bs, nr, per, k_v, o, src_overlap, m_v, pad);
+     }
+ 
++    void initialize_tensors(ggml_context * ctx) override {
++        if (type_a != GGML_TYPE_Q6_K || m != 152064 || k != 3584 || bs != std::array<int64_t, 2>{1, 1} || nr != std::array<int64_t, 2>{1, 1}) {
++            test_case::initialize_tensors(ctx);
++            return;
++        }
++        for (ggml_tensor * t = ggml_get_first_tensor(ctx); t; t = ggml_get_next_tensor(ctx, t)) {
++            if (std::strcmp(t->name, "a") != 0) {
++                init_tensor_uniform(t);
++                continue;
++            }
++            // Keep peak host memory bounded while initializing this 426 MiB tensor.
++            constexpr int64_t chunk_rows = 256;
++            constexpr int variants = 4;
++            const size_t row_bytes = ggml_row_size(type_a, k);
++            std::vector<float> values(chunk_rows * k);
++            std::vector<uint8_t> quantized(variants * chunk_rows * row_bytes);
++            std::mt19937 gen(20261102);
++            std::uniform_real_distribution<float> dist(-1.0f, 1.0f);
++            for (int v = 0; v < variants; ++v) {
++                for (float & value : values) value = dist(gen);
++                ggml_quantize_chunk(type_a, values.data(), quantized.data() + v * chunk_rows * row_bytes, 0, chunk_rows, k, nullptr);
++            }
++            for (int64_t row = 0; row < m; row += chunk_rows) {
++                const int64_t rows = std::min(chunk_rows, m - row);
++                const int variant = (row / chunk_rows) % variants;
++                ggml_backend_tensor_set(t, quantized.data() + variant * chunk_rows * row_bytes, row * row_bytes, rows * row_bytes);
++            }
++        }
++    }
++
+     double max_nmse_err() override {
+         return 5e-4;
+     }
+@@ -11227,6 +11257,9 @@
+         test_cases.emplace_back(new test_mul_mat(GGML_TYPE_Q4_K, GGML_TYPE_F32, m, 2, 1024, { 1, 1 }, { 1, 1 }));
+     }
+ 
++    // Experimental tests for the IQ3_S model's Q6_K vocabulary projection.
++    test_cases.emplace_back(new test_mul_mat(GGML_TYPE_Q6_K, GGML_TYPE_F32, 152064, 1, 3584, {1, 1}, {1, 1}));
++    test_cases.emplace_back(new test_mul_mat(GGML_TYPE_Q6_K, GGML_TYPE_F32, 152064, 32, 3584, {1, 1}, {1, 1}));
+     test_cases.emplace_back(new test_mul_mat(GGML_TYPE_Q4_0, GGML_TYPE_F32, 2880, 32, 2880, {1, 1}, {1, 1}));
+     test_cases.emplace_back(new test_mul_mat(GGML_TYPE_Q8_0, GGML_TYPE_F32, 2880, 32, 2880, {1, 1}, {1, 1}));
+     test_cases.emplace_back(new test_mul_mat(GGML_TYPE_MXFP4, GGML_TYPE_F32, 2880, 32, 2880, {1, 1}, {1, 1}));

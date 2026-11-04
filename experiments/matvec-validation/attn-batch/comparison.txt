@@ -1,0 +1,7 @@
+attn_input n=3 exact=False rmse=1.934691e-08 relative_l2=6.75212243e-08 max=9.53674316e-07
+cpu Qcur-0 last_token_exact=True max_abs=0
+cpu Kcur-0 last_token_exact=True max_abs=0
+cpu Vcur-0 last_token_exact=True max_abs=0
+gpu Qcur-0 last_token_exact=True max_abs=0
+gpu Kcur-0 last_token_exact=True max_abs=0
+gpu Vcur-0 last_token_exact=True max_abs=0

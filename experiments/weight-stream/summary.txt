@@ -1,0 +1,21 @@
+iq3-stream-plain-1
+  scheduler entries: 2720 backends: ['Vulkan0'] largest split number: 339
+iq3-stream-mmap-16tokens-1
+  scheduler entries: 2720 backends: ['Vulkan0'] largest split number: 339
+  MemAvailable samples: 33 minimum KiB: 3801548
+probe-iq3-gpu-chinese-system-32
+  scheduler entries: 3060 backends: ['Vulkan0'] largest split number: 339
+  MemAvailable samples: 70 minimum KiB: 3712972
+  generated text: 小明原来有三本书，小红送给他两本后有五本，再借给朋友一本后剩下四本。所以，小明
+probe-iq3-cpu-chinese-system-32
+  scheduler entries: 9 backends: ['CPU'] largest split number: 0
+  MemAvailable samples: 23 minimum KiB: 4210948
+  generated text: 小明原来有三本书，小红送给他两本后有五本，借给朋友一本后剩下四本。所以小明现在有
+launcher-chat-iq1-4
+  scheduler entries: 5100 backends: ['Vulkan0'] largest split number: 339
+  MemAvailable samples: 34 minimum KiB: 3715312
+launcher-chat-iq3-32
+  scheduler entries: 5100 backends: ['Vulkan0'] largest split number: 339
+  MemAvailable samples: 99 minimum KiB: 3620064
+Chinese CPU/GPU identical initial token count: 18
+IQ1 first-position full-vocabulary binary identical: True

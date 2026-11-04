@@ -1,0 +1,47 @@
+--- a/ggml/src/ggml-vulkan/ggml-vulkan.cpp
++++ b/ggml/src/ggml-vulkan/ggml-vulkan.cpp
+@@ -7397,7 +7397,25 @@
+     const bool needs_split = dst->ne[2] == 1 && dst->ne[3] == 1 && nbytes > ctx->device->properties.limits.maxStorageBufferRange;
+     if (needs_split) {
+         // Choose the number of rows that can fit (and divide by two, to allow for any additional offsets)
+-        const uint32_t M_split = ctx->device->properties.limits.maxStorageBufferRange / (2 * src0->nb[1]);
++        uint32_t M_split = ctx->device->properties.limits.maxStorageBufferRange / (2 * src0->nb[1]);
++        // Experimental: use aligned vector dispatches for the two verified vocabulary matrices.
++        const size_t alignment = ctx->device->properties.limits.minStorageBufferOffsetAlignment;
++        const bool use_split_vec = getenv("GGML_VK_EXPERIMENTAL_LARGE_MATVEC") &&
++            ctx->device->vendor_id == 0x13b5 && ctx->num_additional_fused_ops == 0 &&
++            (src0->type == GGML_TYPE_Q5_K || src0->type == GGML_TYPE_Q6_K) &&
++            src0->ne[0] == 3584 && src0->ne[1] == 152064 && src1->type == GGML_TYPE_F32 &&
++            dst->ne[1] == 1 && ggml_is_contiguous(src0) && ggml_is_contiguous(src1) &&
++            ggml_is_contiguous(dst) && alignment > 0 && alignment <= M_split &&
++            get_misalign_bytes(ctx, src0) == 0 && get_misalign_bytes(ctx, src1) == 0 &&
++            get_misalign_bytes(ctx, dst) == 0;
++        if (use_split_vec) {
++            // A row count that is a multiple of the byte alignment ensures both
++            // weight and F32 output offsets remain descriptor-aligned.
++            M_split = (M_split / alignment) * alignment;
++            if (getenv("GGML_VK_EXPERIMENTAL_TRACE_LARGE_MATVEC")) {
++                fprintf(stderr, "MALI_LARGE_MATVEC type=%s rows=%u alignment=%zu\n", ggml_type_name(src0->type), M_split, alignment);
++            }
++        }
+         uint32_t m_offset = 0;
+         while (m_offset < dst->ne[0]) {
+             const uint32_t cur_M_size = std::min(M_split, (uint32_t)(dst->ne[0] - m_offset));
+@@ -7412,7 +7430,16 @@
+             dst2.ne[0] = cur_M_size;
+             src02.ne[1] = cur_M_size;
+ 
+-            ggml_vk_mul_mat_q_f16(ctx, subctx, &src02, src1, &dst2, true);
++            if (use_split_vec) {
++                dst2.src[0] = &src02;
++                ggml_tensor * nodes[] = { &dst2 };
++                ggml_cgraph graph = *cgraph;
++                graph.nodes = nodes;
++                graph.n_nodes = 1;
++                ggml_vk_mul_mat_vec_q_f16(ctx, subctx, &graph, 0);
++            } else {
++                ggml_vk_mul_mat_q_f16(ctx, subctx, &src02, src1, &dst2, true);
++            }
+ 
+             m_offset += cur_M_size;
+         }

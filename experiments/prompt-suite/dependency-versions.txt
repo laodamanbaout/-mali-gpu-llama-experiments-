@@ -1,0 +1,8 @@
+clang version 21.1.8
+cmake version 4.4.5
+1.13.2
+git version 2.56.0
+glslang	16.6.0
+shaderc	2026.4
+spirv-tools	1.4.363.0
+vulkan-headers	1.4.367

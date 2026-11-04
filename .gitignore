@@ -1,0 +1,6 @@
+llama-src/
+build/
+*.gguf
+*.so
+*.so.*
+__pycache__/

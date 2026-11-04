@@ -1,0 +1,38 @@
+--- a/ggml/src/ggml-vulkan/ggml-vulkan.cpp
++++ b/ggml/src/ggml-vulkan/ggml-vulkan.cpp
+@@ -14815,6 +14815,35 @@
+             }
+         }
+ 
++        // Diagnostic-only selective fusion switch. Applied after the regular
++        // overlap checks; all state reset mirrors the normal fallback above.
++        const char * disabled_fusion = getenv("GGML_VK_EXPERIMENTAL_DISABLE_FUSION_TYPE");
++        const bool disable_named = fusion_string && disabled_fusion && strcmp(disabled_fusion, fusion_string) == 0;
++        const bool disable_rope_f16 = fusion_string &&
++            ctx->device->vendor_id == 0x13b5 && getenv("GGML_VK_EXPERIMENTAL_UNFUSED_ROPE_F16") &&
++            strcmp(fusion_string, "ROPE_VIEW_SET_ROWS") == 0 &&
++            cgraph->nodes[i + ctx->num_additional_fused_ops]->type == GGML_TYPE_F16;
++        if (disable_named || disable_rope_f16) {
++            if (getenv("GGML_VK_EXPERIMENTAL_TRACE_FUSIONS")) {
++                fprintf(stderr, "MALI_FUSION disabled=%s node=%s op=%s n0=%lld n1=%lld\n", fusion_string,
++                        cgraph->nodes[i]->name, ggml_op_name(cgraph->nodes[i]->op),
++                        (long long)cgraph->nodes[i]->ne[0], (long long)cgraph->nodes[i]->ne[1]);
++            }
++            ctx->num_additional_fused_ops = 0;
++            ctx->fused_ops_write_mask = 1;
++            ctx->fused_topk_moe_mode = TOPK_MOE_COUNT;
++            ctx->fused_topk_moe_scale = false;
++            ctx->fused_topk_qsa = false;
++            ctx->fused_hc_post_gate = false;
++            ctx->fused_rms_norm_mode = RMS_NORM_COUNT;
++            fusion_string = nullptr;
++        }
++        if (fusion_string && getenv("GGML_VK_EXPERIMENTAL_TRACE_FUSIONS")) {
++            fprintf(stderr, "MALI_FUSION enabled=%s node=%s op=%s n0=%lld n1=%lld\n", fusion_string,
++                    cgraph->nodes[i]->name, ggml_op_name(cgraph->nodes[i]->op),
++                    (long long)cgraph->nodes[i]->ne[0], (long long)cgraph->nodes[i]->ne[1]);
++        }
++
+         // Signal the almost_ready fence when the graph is mostly complete (< 20% remaining)
+         bool almost_ready = (cgraph->n_nodes - i) < cgraph->n_nodes / 5;
+         bool submit = (submitted_nodes >= ctx->device->max_nodes_per_submit) ||
