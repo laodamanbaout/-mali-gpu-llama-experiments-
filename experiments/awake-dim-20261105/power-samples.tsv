@@ -1,0 +1,196 @@
+group	mode	trial	elapsed_s	wakefulness	stay_on	test_lock	screen_brightness	cached_brightness	brightness_setting	brightness_mode	cpu0_khz	cpu4_khz	cpu7_khz	thread_allowed_lists
+stayon	doze-normal	1	0.0	Dozing	false						1250000	2850000	500000	
+stayon	doze-normal	1	5.45	Dozing	false						2000000	2850000	2850000	
+stayon	doze-normal	1	10.7	Dozing	false						600000	2850000	500000	
+stayon	doze-normal	1	16.02	Dozing	false						450000	2850000	2850000	
+stayon	doze-normal	1	21.39	Dozing	false						500000	2850000	500000	
+stayon	doze-normal	1	26.69	Dozing	false						450000	2850000	2850000	
+stayon	doze-normal	1	32.02	Dozing	false						450000	2850000	500000	
+stayon	doze-normal	1	37.33	Dozing	false						450000	2850000	500000	
+stayon	doze-normal	1	42.67	Dozing	false						1800000	2850000	700000	
+stayon	doze-stayon	1	0.0	Dozing	true						1050000	2850000	500000	
+stayon	doze-stayon	1	5.25	Dozing	true						2000000	2850000	2550000	
+stayon	doze-stayon	1	10.67	Dozing	true						450000	2850000	1500000	
+stayon	doze-stayon	1	15.94	Dozing	true						450000	1500000	2850000	
+stayon	doze-stayon	1	21.25	Dozing	true						450000	2850000	1200000	
+stayon	doze-stayon	1	26.56	Dozing	true						550000	2850000	500000	
+stayon	doze-stayon	1	31.86	Dozing	true						450000	2850000	500000	
+stayon	doze-stayon	1	37.11	Dozing	true						500000	2850000	500000	
+stayon	doze-stayon	2	0.0	Dozing	true						850000	2250000	1800000	
+stayon	doze-stayon	2	5.3	Dozing	true						2000000	2850000	600000	
+stayon	doze-stayon	2	10.66	Dozing	true						2000000	2850000	500000	
+stayon	doze-stayon	2	15.89	Dozing	true						1800000	2850000	500000	
+stayon	doze-stayon	2	21.16	Dozing	true						500000	2850000	500000	
+stayon	doze-stayon	2	26.42	Dozing	true						500000	2850000	2850000	
+stayon	doze-stayon	2	31.73	Dozing	true						450000	2850000	1000000	
+stayon	doze-stayon	2	36.94	Dozing	true						500000	2850000	500000	
+stayon	doze-normal	2	0.0	Dozing	false						1150000	700000	500000	
+stayon	doze-normal	2	5.25	Dozing	false						2000000	2850000	500000	
+stayon	doze-normal	2	10.72	Dozing	false						1500000	2850000	2100000	
+stayon	doze-normal	2	16.01	Dozing	false						450000	900000	2850000	
+stayon	doze-normal	2	21.3	Dozing	false						550000	2850000	1500000	
+stayon	doze-normal	2	26.59	Dozing	false						550000	2850000	500000	
+stayon	doze-normal	2	31.88	Dozing	false						450000	2850000	500000	
+stayon	doze-normal	2	37.09	Dozing	false						500000	2850000	2850000	
+affinity	default	1	0.0	Dozing	false						450000	1400000	500000	
+affinity	default	1	5.31	Dozing	false						1100000	1900000	2850000	0-7
+affinity	default	1	10.89	Dozing	false						450000	2850000	1500000	0-7
+affinity	default	1	16.53	Dozing	false						900000	2850000	500000	0-7
+affinity	default	1	22.16	Dozing	false						450000	2850000	900000	0-7
+affinity	default	1	27.73	Dozing	false						450000	2850000	1100000	0-7
+affinity	default	1	33.36	Dozing	false						750000	2850000	500000	0-7
+affinity	default	1	38.86	Dozing	false						550000	1600000	500000	
+affinity	big	1	0.0	Dozing	false						1700000	1200000	700000	
+affinity	big	1	5.33	Dozing	false						2000000	2850000	2850000	4-7
+affinity	big	1	10.88	Dozing	false						2000000	2850000	1200000	4-7
+affinity	big	1	16.45	Dozing	false						550000	2850000	500000	4-7
+affinity	big	1	22.06	Dozing	false						450000	2850000	500000	4-7
+affinity	big	1	27.61	Dozing	false						450000	2850000	500000	4-7
+affinity	big	1	33.17	Dozing	false						750000	2850000	1100000	4-7
+affinity	big	1	38.72	Dozing	false						450000	1200000	500000	
+affinity	big	2	0.0	Dozing	false						900000	2850000	500000	
+affinity	big	2	5.44	Dozing	false						2000000	2850000	900000	4-7
+affinity	big	2	11.31	Dozing	false						450000	2850000	700000	4-7
+affinity	big	2	17.02	Dozing	false						450000	1700000	2850000	4-7
+affinity	big	2	22.59	Dozing	false						650000	1700000	2850000	4-7
+affinity	big	2	28.09	Dozing	false						450000	1500000	2850000	4-7
+affinity	big	2	33.72	Dozing	false						750000	2550000	2850000	4-7
+affinity	default	2	0.0	Dozing	false						1100000	2400000	500000	
+affinity	default	2	5.38	Dozing	false						450000	2850000	500000	0-7
+affinity	default	2	11.03	Dozing	false						2000000	2850000	500000	0-7
+affinity	default	2	16.52	Dozing	false						700000	2850000	500000	0-7
+affinity	default	2	22.05	Dozing	false						450000	2850000	900000	0-7
+affinity	default	2	27.59	Dozing	false						450000	2850000	500000	0-7
+affinity	default	2	33.17	Dozing	false						450000	2850000	500000	0-7
+affinity	default	2	38.67	Dozing	false						500000	2650000	500000	
+wakelock	wakeoff	1	0.0	Dozing	false	False					1050000	2150000	500000	
+wakelock	wakeoff	1	5.31	Dozing	false	False					2000000	2850000	500000	
+wakelock	wakeoff	1	10.53	Dozing	false	False					850000	2850000	2850000	
+wakelock	wakeoff	1	15.8	Dozing	false	False					500000	2850000	500000	
+wakelock	wakeoff	1	21.08	Dozing	false	False					550000	2850000	500000	
+wakelock	wakeoff	1	26.39	Dozing	false	False					500000	2850000	500000	
+wakelock	wakeoff	1	31.73	Dozing	false	False					1300000	1200000	2850000	
+wakelock	wakeoff	1	37.03	Dozing	false	False					450000	1800000	2850000	
+wakelock	wakeon	1	0.0	Dozing	false	True					450000	1700000	700000	
+wakelock	wakeon	1	5.33	Dozing	false	True					2000000	2850000	900000	
+wakelock	wakeon	1	10.66	Dozing	false	True					650000	2850000	500000	
+wakelock	wakeon	1	15.97	Dozing	false	True					450000	1100000	2850000	
+wakelock	wakeon	1	21.27	Dozing	false	True					1600000	2850000	2850000	
+wakelock	wakeon	1	26.61	Dozing	false	True					450000	2850000	500000	
+wakelock	wakeon	1	31.98	Dozing	false	True					600000	2850000	500000	
+wakelock	wakeon	1	37.22	Dozing	false	True					500000	2850000	500000	
+wakelock	wakeon	2	0.0	Dozing	false	True					450000	1700000	500000	
+wakelock	wakeon	2	5.44	Dozing	false	True					450000	2850000	2850000	
+wakelock	wakeon	2	10.78	Dozing	false	True					450000	2850000	500000	
+wakelock	wakeon	2	16.11	Dozing	false	True					2000000	2850000	2000000	
+wakelock	wakeon	2	21.36	Dozing	false	True					450000	2850000	500000	
+wakelock	wakeon	2	26.66	Dozing	false	True					600000	2850000	500000	
+wakelock	wakeon	2	31.89	Dozing	false	True					500000	2850000	500000	
+wakelock	wakeon	2	37.14	Dozing	false	True					450000	2850000	900000	
+wakelock	wakeoff	2	0.0	Dozing	false	False					600000	1500000	500000	
+wakelock	wakeoff	2	5.27	Dozing	false	False					2000000	2850000	2850000	
+wakelock	wakeoff	2	10.62	Dozing	false	False					500000	2850000	500000	
+wakelock	wakeoff	2	15.92	Dozing	false	False					450000	2850000	1600000	
+wakelock	wakeoff	2	21.3	Dozing	false	False					450000	1400000	2850000	
+wakelock	wakeoff	2	26.59	Dozing	false	False					450000	2850000	600000	
+wakelock	wakeoff	2	31.89	Dozing	false	False					500000	2850000	500000	
+wakelock	wakeoff	2	37.11	Dozing	false	False					450000	2850000	700000	
+interactive	interactive-doze	1	0.0	Dozing	true						650000	2850000	500000	
+interactive	interactive-doze	1	5.25	Dozing	true						450000	2850000	800000	
+interactive	interactive-doze	1	10.56	Dozing	true						900000	2850000	2350000	
+interactive	interactive-doze	1	15.89	Dozing	true						450000	2850000	2850000	
+interactive	interactive-doze	1	21.22	Dozing	true						450000	2850000	500000	
+interactive	interactive-doze	1	26.58	Dozing	true						550000	2850000	500000	
+interactive	interactive-doze	1	31.91	Dozing	true						500000	2850000	500000	
+interactive	interactive-doze	1	37.17	Dozing	true						550000	2850000	500000	
+interactive	interactive-awake	1	0.0	Awake	true						1100000	2100000	500000	
+interactive	interactive-awake	1	5.25	Awake	true						2000000	2850000	1500000	
+interactive	interactive-awake	1	10.53	Awake	true						450000	2850000	900000	
+interactive	interactive-awake	1	15.84	Awake	true						450000	2850000	700000	
+interactive	interactive-awake	1	21.14	Awake	true						450000	1500000	2850000	
+interactive	interactive-awake	1	26.55	Awake	true						450000	1400000	500000	
+interactive	interactive-awake	2	0.0	Awake	true						450000	1700000	500000	
+interactive	interactive-awake	2	5.31	Awake	true						1100000	2850000	900000	
+interactive	interactive-awake	2	10.56	Awake	true						500000	2850000	1800000	
+interactive	interactive-awake	2	15.84	Awake	true						500000	2850000	1600000	
+interactive	interactive-awake	2	21.11	Awake	true						500000	1900000	2850000	
+interactive	interactive-awake	2	26.39	Awake	true						450000	1600000	500000	
+interactive	interactive-doze	2	0.0	Dozing	true						950000	1400000	500000	
+interactive	interactive-doze	2	5.23	Dozing	true						450000	2850000	900000	
+interactive	interactive-doze	2	10.59	Dozing	true						2000000	2850000	2750000	
+interactive	interactive-doze	2	15.91	Dozing	true						450000	2850000	500000	
+interactive	interactive-doze	2	21.22	Dozing	true						450000	1600000	2850000	
+interactive	interactive-doze	2	26.56	Dozing	true						650000	2200000	2850000	
+interactive	interactive-doze	2	31.86	Dozing	true						450000	2850000	2850000	
+interactive	interactive-doze	2	37.12	Dozing	true						500000	2850000	500000	
+awakedim	display-doze	1	0.0	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	1	5.64	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	1	11.3	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	1	16.94	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	1	22.58	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	1	28.14	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	1	33.67	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	1	39.27	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	1	44.91	Dozing	true		0.0	0.23032409	60	0				
+awakedim	dim-awake	1	0.0	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	1	5.61	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	1	11.08	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	1	16.59	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	1	21.98	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	1	27.48	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	2	0.0	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	2	5.61	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	2	11.03	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	2	16.58	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	2	22.17	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	dim-awake	2	27.64	Awake	true		0.002380662	0.23032409	60	0				
+awakedim	display-doze	2	0.0	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	2	5.52	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	2	11.16	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	2	16.7	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	2	22.31	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	2	27.91	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	2	33.36	Dozing	true		0.0	0.23032409	60	0				
+awakedim	display-doze	2	38.94	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	0.0	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	5.5	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	11.17	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	16.8	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	22.41	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	28.03	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	33.59	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	39.16	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	44.73	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	50.3	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	55.86	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	61.45	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	67.01	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	72.58	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	78.12	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	83.72	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	89.26	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	94.86	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	100.41	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	106.05	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	111.51	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	117.08	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	122.67	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	128.25	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	display-doze	1	133.73	Dozing	true		0.0	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	0.0	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	5.5	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	10.92	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	16.42	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	22.0	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	27.56	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	33.11	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	38.64	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	44.17	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	49.7	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	55.23	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	60.73	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	66.31	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	71.88	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	77.41	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	82.91	Awake	true		0.002380662	0.23032409	60	0				
+awakedim-chat32	dim-awake	1	88.45	Awake	true		0.002380662	0.23032409	60	0				

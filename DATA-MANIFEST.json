@@ -318,5 +318,35 @@
     "path": "experiments/screen-state-20261105/run-one-termux.sh",
     "size": 2135,
     "sha256": "80e10b3444e6d330113940d92b6b3e3c43f493eaf8a0b277f9c18682ebaf2db5"
+  },
+  {
+    "path": "experiments/awake-dim-20261105/awake-dim-run.py",
+    "size": 3541,
+    "sha256": "07cf2320b238ea4a20e4da2b821f450a061c0ebefeb604432fec157940a60173"
+  },
+  {
+    "path": "experiments/awake-dim-20261105/MaliCpuWakeProbe.java",
+    "size": 2138,
+    "sha256": "6e10a3b0a823170cf8f3b81bdb6d6d2446ffca181258809a42cf4025f04bea15"
+  },
+  {
+    "path": "experiments/awake-dim-20261105/measurements-chat32.tsv",
+    "size": 754,
+    "sha256": "9c66dfcc286a9f7ec140f2996a41e4ae979351a4aa9e3dd32affefc99eee0a2d"
+  },
+  {
+    "path": "experiments/awake-dim-20261105/measurements-short.tsv",
+    "size": 3580,
+    "sha256": "53df5ccf762f53719bb651916c66fc53eaf694c705a3fded2144f3a37f1f779e"
+  },
+  {
+    "path": "experiments/awake-dim-20261105/power-samples.tsv",
+    "size": 14025,
+    "sha256": "671daf79e5d5c5137c24ff904f96d19525ef51f271c01ddc5b7b34c5bd5c3e1f"
+  },
+  {
+    "path": "experiments/awake-dim-20261105/README.md",
+    "size": 7182,
+    "sha256": "2b35497f584fd017e052cf3d1bbc82aebac5e423e88c4cc7c16a177387104ee6"
   }
 ]
