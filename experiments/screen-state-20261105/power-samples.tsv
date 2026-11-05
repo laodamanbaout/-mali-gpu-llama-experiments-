@@ -1,0 +1,104 @@
+test	display	trial	elapsed_s	wakefulness	stay_on	cpu0_khz	cpu4_khz	cpu7_khz
+short	screenoff	1	0.0	Dozing	false			
+short	screenoff	1	5.2	Dozing	false			
+short	screenoff	1	10.5	Dozing	false			
+short	screenoff	1	15.72	Dozing	false			
+short	screenoff	1	20.95	Dozing	false			
+short	screenoff	1	26.19	Dozing	false			
+short	screenoff	1	31.44	Dozing	false			
+short	screenoff	1	36.61	Dozing	false			
+short	screenoff	1	41.78	Dozing	false			
+short	screenoff	1	46.98	Dozing	false			
+short	screenon	1	0.0	Awake	true			
+short	screenon	1	5.11	Awake	true			
+short	screenon	1	10.22	Awake	true			
+short	screenon	1	15.45	Awake	true			
+short	screenon	1	20.64	Awake	true			
+short	screenon	1	25.84	Awake	true			
+short	screenon	2	0.0	Awake	true			
+short	screenon	2	5.12	Awake	true			
+short	screenon	2	10.23	Awake	true			
+short	screenon	2	15.44	Awake	true			
+short	screenon	2	20.61	Awake	true			
+short	screenon	2	25.8	Awake	true			
+short	screenoff	2	0.0	Dozing	false			
+short	screenoff	2	5.14	Dozing	false			
+short	screenoff	2	10.3	Dozing	false			
+short	screenoff	2	15.48	Dozing	false			
+short	screenoff	2	20.7	Dozing	false			
+short	screenoff	2	25.83	Dozing	false			
+short	screenoff	2	30.97	Dozing	false			
+short	screenoff	2	36.17	Dozing	false			
+short	screenoff	3	0.0	Dozing	false	450000	2850000	600000
+short	screenoff	3	5.19	Dozing	false	450000	2850000	500000
+short	screenoff	3	10.61	Dozing	false	2000000	2850000	1700000
+short	screenoff	3	15.83	Dozing	false	2000000	2850000	2850000
+short	screenoff	3	21.14	Dozing	false	500000	2850000	500000
+short	screenoff	3	26.42	Dozing	false	450000	2850000	1400000
+short	screenoff	3	31.73	Dozing	false	450000	800000	2850000
+short	screenoff	3	36.95	Dozing	false	450000	1500000	500000
+short	screenon	3	0.0	Awake	true	450000	200000	1700000
+short	screenon	3	5.27	Awake	true	2000000	2850000	2850000
+short	screenon	3	10.48	Awake	true	550000	2850000	2550000
+short	screenon	3	15.94	Awake	true	450000	1600000	2850000
+short	screenon	3	21.16	Awake	true	450000	700000	2850000
+short	screenon	3	26.47	Awake	true	900000	2850000	600000
+short	screenon	4	0.0	Awake	true	1300000	1400000	1900000
+short	screenon	4	5.22	Awake	true	2000000	2850000	2850000
+short	screenon	4	10.45	Awake	true	450000	2850000	700000
+short	screenon	4	15.69	Awake	true	700000	2850000	2850000
+short	screenon	4	20.98	Awake	true	450000	1300000	2850000
+short	screenon	4	26.19	Awake	true	800000	1400000	500000
+short	screenoff	4	0.0	Dozing	false	1100000	2200000	500000
+short	screenoff	4	5.23	Dozing	false	2000000	2850000	1100000
+short	screenoff	4	10.45	Dozing	false	450000	2850000	1800000
+short	screenoff	4	15.81	Dozing	false	2000000	2850000	2850000
+short	screenoff	4	21.02	Dozing	false	550000	2850000	500000
+short	screenoff	4	26.34	Dozing	false	550000	2850000	500000
+short	screenoff	4	31.66	Dozing	false	450000	2850000	500000
+short	screenoff	4	36.89	Dozing	false	750000	2850000	500000
+chat32	screenoff	1	0.0	Dozing	false	1250000	2050000	500000
+chat32	screenoff	1	5.27	Dozing	false	1800000	1300000	2850000
+chat32	screenoff	1	10.48	Dozing	false	450000	2850000	500000
+chat32	screenoff	1	15.78	Dozing	false	450000	2850000	500000
+chat32	screenoff	1	21.11	Dozing	false	2000000	2850000	2850000
+chat32	screenoff	1	26.36	Dozing	false	500000	2850000	2450000
+chat32	screenoff	1	31.61	Dozing	false	550000	2850000	500000
+chat32	screenoff	1	36.84	Dozing	false	650000	1700000	2850000
+chat32	screenoff	1	42.09	Dozing	false	500000	2850000	500000
+chat32	screenoff	1	47.38	Dozing	false	800000	2850000	2850000
+chat32	screenoff	1	52.58	Dozing	false	500000	2850000	500000
+chat32	screenoff	1	57.91	Dozing	false	450000	2850000	1000000
+chat32	screenoff	1	63.11	Dozing	false	500000	2850000	500000
+chat32	screenoff	1	68.38	Dozing	false	450000	2850000	500000
+chat32	screenoff	1	73.64	Dozing	false	450000	2850000	700000
+chat32	screenoff	1	78.94	Dozing	false	450000	1700000	2850000
+chat32	screenoff	1	84.17	Dozing	false	550000	2850000	500000
+chat32	screenoff	1	89.41	Dozing	false	500000	2850000	500000
+chat32	screenoff	1	94.61	Dozing	false	1700000	2850000	700000
+chat32	screenoff	1	99.84	Dozing	false	650000	2100000	2850000
+chat32	screenoff	1	105.06	Dozing	false	450000	2850000	1000000
+chat32	screenoff	1	110.25	Dozing	false	450000	2850000	500000
+chat32	screenoff	1	115.47	Dozing	false	450000	1800000	2850000
+chat32	screenoff	1	120.69	Dozing	false	450000	2850000	900000
+chat32	screenoff	1	125.92	Dozing	false	500000	2850000	500000
+chat32	screenoff	1	131.22	Dozing	false	450000	2850000	500000
+chat32	screenon	1	0.0	Awake	true	1900000	2050000	800000
+chat32	screenon	1	5.17	Awake	true	2000000	2850000	2000000
+chat32	screenon	1	10.31	Awake	true	500000	2850000	500000
+chat32	screenon	1	15.59	Awake	true	550000	2850000	500000
+chat32	screenon	1	20.84	Awake	true	450000	2850000	500000
+chat32	screenon	1	26.05	Awake	true	450000	2850000	800000
+chat32	screenon	1	31.33	Awake	true	1300000	2850000	900000
+chat32	screenon	1	36.61	Awake	true	550000	2850000	500000
+chat32	screenon	1	41.88	Awake	true	450000	2850000	500000
+chat32	screenon	1	47.14	Awake	true	450000	2850000	800000
+chat32	screenon	1	52.47	Awake	true	500000	600000	2850000
+chat32	screenon	1	57.67	Awake	true	450000	1400000	2850000
+chat32	screenon	1	62.89	Awake	true	750000	2150000	2850000
+chat32	screenon	1	68.19	Awake	true	750000	2550000	2850000
+chat32	screenon	1	73.39	Awake	true	450000	800000	2850000
+chat32	screenon	1	78.62	Awake	true	450000	2850000	800000
+chat32	screenon	1	83.84	Awake	true	800000	1400000	2850000
+chat32	screenon	1	89.12	Awake	true	1100000	2850000	500000
+chat32	screenon	1	94.39	Awake	true	450000	2850000	800000

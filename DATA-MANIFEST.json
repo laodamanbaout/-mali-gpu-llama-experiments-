@@ -283,5 +283,40 @@
     "path": "experiments/weight-stream/probe-iq3-gpu-chinese-system-32-memory.tsv",
     "size": 997,
     "sha256": "ecf2117cc7aa26f6842df337be36a534d7eb9e6679e7a70d84d20f619e2fe629"
+  },
+  {
+    "path": "experiments/screen-state-20261105/measurements.tsv",
+    "size": 2387,
+    "sha256": "b5760f85dba6550e46db2a48e1f34604a1fb52e7a91626cf63b71055754b122f"
+  },
+  {
+    "path": "experiments/screen-state-20261105/power-samples.tsv",
+    "size": 5514,
+    "sha256": "0d91a4ba56c4ba4c9a82bd01ac9fc993cb24ffad302136121efcd2fa70b9ee9d"
+  },
+  {
+    "path": "experiments/screen-state-20261105/prompt-chinese.txt",
+    "size": 141,
+    "sha256": "311d8e9c897006298faf796fc21343887348cb227252cbbd9852838c9cd73332"
+  },
+  {
+    "path": "experiments/screen-state-20261105/prompt-english.txt",
+    "size": 24,
+    "sha256": "bbaff4d2ecd5892d4a442b0f53131641bf6e6f284761dd20fc0664bc97145762"
+  },
+  {
+    "path": "experiments/screen-state-20261105/README.md",
+    "size": 4797,
+    "sha256": "70c892c34d93c4cf59b5c6ef05f611589f0a6dc9a3027e754fe62560f98affb2"
+  },
+  {
+    "path": "experiments/screen-state-20261105/resident-ffn8-probe.cpp",
+    "size": 12632,
+    "sha256": "40de4ff1c3deae180545c13fde2a0b74ff0eb72a816283b0071dbe54467307e4"
+  },
+  {
+    "path": "experiments/screen-state-20261105/run-one-termux.sh",
+    "size": 2135,
+    "sha256": "80e10b3444e6d330113940d92b6b3e3c43f493eaf8a0b277f9c18682ebaf2db5"
   }
 ]
